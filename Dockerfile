@@ -3,6 +3,7 @@ FROM amazonlinux:latest
 ADD . .
 
 RUN yum update -y
+RUN yum install aws-cli -y
 RUN yum install ruby -y
 RUN yum install wget -y
 
