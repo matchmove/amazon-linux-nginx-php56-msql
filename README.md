@@ -1,0 +1,1 @@
+# amazon-linux-nginx-php56-msql
