@@ -27,6 +27,7 @@ RUN pip install ansible
 RUN yum install nginx -y
 RUN yum install php56-fpm php56 php56-opcache php56-xml php56-mcrypt php56-gd php56-devel php56-mysql php56-intl php56-mbstring php56-bcmath php56-pecl-memcache php56-soap php56-mysqlnd -y
 
+
 RUN yum install git -y
 RUN yum install gcc -y
 RUN yum install cronie -y
