@@ -33,14 +33,20 @@ RUN yum install gcc -y
 RUN yum install cronie -y
 RUN yum install memcached -y
 
-RUN easy_install supervisor
-RUN sh -c '/usr/local/bin/echo_supervisord_conf > /etc/supervisord.conf'
-RUN chmod 600 /etc/supervisord.conf
+#RUN easy_install supervisor
+#RUN sh -c '/usr/local/bin/echo_supervisord_conf > /etc/supervisord.conf'
+#RUN chmod 600 /etc/supervisord.conf
 
-RUN sh -c 'curl -L https://raw.githubusercontent.com/Supervisor/initscripts/master/redhat-init-jkoppe > /etc/init.d/supervisord'
-RUN chmod +x /etc/init.d/supervisord
-RUN chkconfig --add supervisord
-RUN chkconfig supervisord on
+#RUN sh -c 'curl -L https://raw.githubusercontent.com/Supervisor/initscripts/master/redhat-init-jkoppe > /etc/init.d/supervisord'
+#RUN chmod +x /etc/init.d/supervisord
+#RUN chkconfig --add supervisord
+#RUN chkconfig supervisord on
+
+RUN chkconfig --add php-fpm
+RUN chkconfig php-fpm on
+
+RUN chkconfig --add nginx
+RUN chkconfig nginx on
 
 RUN yum install unzip zip -y
 RUN yum install mysql -y
