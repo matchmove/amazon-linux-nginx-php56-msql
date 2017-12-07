@@ -50,10 +50,8 @@ RUN chkconfig nginx on
 
 RUN yum install unzip zip -y
 RUN yum install mysql -y
-RUN curl -sS https://getcomposer.org/installer | php -- --install -dir=/usr/bin/ --filename=composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 RUN sh -c 'echo -e "short_open_tag=On" > /etc/php-5.6.d/shortopentags.ini'
 RUN sh -c 'echo -e "date.timezone=\"Asia/Singapore\"" > /etc/php-5.6.d/timezone.ini'
 
 #RUN mkdir /log
-
-
